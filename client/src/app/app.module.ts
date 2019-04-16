@@ -25,6 +25,11 @@ import { JwtModule, JwtHelperService, JwtInterceptor } from '@auth0/angular-jwt'
 
 // Route Guards
 import { AuthGuard } from './guards/auth.guard';
+import { CreateComponent } from './polls/create/create.component';
+import { PollComponent } from './polls/poll/poll.component';
+import { PollsListComponent } from './polls/polls-list/polls-list.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ChartComponent } from './shared/chart/chart.component';
 
 export function jwtTokenGetter() {
   return localStorage.getItem('id_token');
@@ -42,7 +47,12 @@ export function jwtTokenGetter() {
     RegisterComponent,
     LoginComponent,
     ContactDetailsComponent,
-    ContactDeleteComponent
+    ContactDeleteComponent,
+    CreateComponent,
+    PollComponent,
+    PollsListComponent,
+    ProfileComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
