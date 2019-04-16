@@ -1,27 +1,20 @@
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { BasePageComponent } from 'src/app/partials/base-page/base-page.component';
 import { ActivatedRoute } from '@angular/router';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent extends BasePageComponent implements OnInit {
+export class ContactComponent implements OnInit {
 
-  constructor(
-    route: ActivatedRoute,
-    private authService: AuthService
-    ) {
-    super(route);
-  }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  isLoggedIn(): boolean {
-    return this.authService.loggedIn();
-  }
+
 
 }

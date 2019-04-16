@@ -9,11 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './partials/header/header.component';
 import { FooterComponent } from './partials/footer/footer.component';
-import { BasePageComponent } from './partials/base-page/base-page.component';
 import { HomeComponent } from './pages/home/home.component';
-import { AboutComponent } from './pages/about/about.component';
-import { ProductsComponent } from './pages/products/products.component';
-import { ServicesComponent } from './pages/services/services.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
@@ -39,11 +35,7 @@ export function jwtTokenGetter() {
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    BasePageComponent,
     HomeComponent,
-    AboutComponent,
-    ProductsComponent,
-    ServicesComponent,
     ContactComponent,
     PageNotFoundComponent,
     ContactListComponent,
