@@ -18,13 +18,21 @@
         <a class="nav-link" routerLink="/"
           ><i class="fas fa-lg fa-igloo"></i> Home
       </a>
-      
+
        </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/contact"
+        <a class="nav-link" routerLink="/polls"
           ><i class="fa fa-lg fa-phone"></i> Poll</a
         >
       </li>
+
+      <li *ngIf="isLoggedIn()" class="nav-item">
+        <a class="nav-link" routerLink="/create"
+          ><i class="fa fa-lg fa-phone"></i>New Poll</a
+        >
+      </li>
+
+
 
 
         <li *ngIf="isLoggedIn()" class="navbar-text text-success ml-5 mr-5 d-none d-lg-inline"><i class="fas fa-lg fa-user"></i>
