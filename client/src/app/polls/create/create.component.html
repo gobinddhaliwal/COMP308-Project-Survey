@@ -1,3 +1,21 @@
-<p>
-  create works!
-</p>
+<div class="center-container">
+  <h1 class="title">New poll</h1>
+  <form FormGroup="pollForm" (submit)="submit(pollForm.value)">
+    <md-input-container>
+      <input mdInput placeholder="Title" FormControl="pollForm.controls.name">
+    </md-input-container>
+    <p>Options</p>
+    <div FormArrayName="options">
+      <div class="input-container" *ngFor="let poll of pollForm.controls['options']['controls']; let i = index">
+        <md-input-container FormGroupName="i">
+          <input mdInput FormControlName="value" placeholder={{getOptionName(i)}}>
+        </md-input-container>
+        <button *ngIf="i > 1" type="button" class="remove" md-icon-button (click)="removeOption(i)">
+          <md-icon>clear</md-icon>
+        </button>
+      </div>
+    </div>
+    <button type="button" md-button color="accent" class="add" (click)="addOption()">Add option</button>
+    <button type="submit" md-raised-button color="primary" [disabled]="!pollForm.valid">Submit</button>
+  </form>
+</div>

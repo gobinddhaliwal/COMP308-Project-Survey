@@ -3,24 +3,24 @@
 body{
 
     /* background: url(https://cdn-images-1.medium.com/max/2400/1*ZYnsonxwEk9S-6grmJVVhQ.jpeg); */
-    background: black;
+
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
     background-attachment: fixed;
-   
+
 }
 
 
 
 .home-box{
- background: rgba(0, 0, 0, 0.8); 
+ background: rgba(0, 0, 0, 0.8);
 
  display: flex;
  min-height: 90vh;
 flex-direction: column;
 background-attachment: fixed;
- 
+
 }
 
 .fat{
@@ -30,15 +30,16 @@ background-attachment: fixed;
 
 .mt-10 {
     margin-top: 15%;
-     
+
   }
 
 .mt-5 {
     margin-top: 20%;
-    
+
   }
 
  .footer{
       background: rgba(0, 0, 0, 0.2);
-      
+
   }
+
