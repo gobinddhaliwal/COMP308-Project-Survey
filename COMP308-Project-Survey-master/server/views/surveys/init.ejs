@@ -1,0 +1,43 @@
+<% include ../partials/header.ejs %>
+<!--File  name: Survey Init,  Author's  name: Group 3,  web  site  name: Its Survey,  file  description: this file is to Survey Init page-->
+    <!-- MAIN CONTENT -->
+    <div class="body_container">
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <h3 class="list_title"><i class="glyphicon glyphicon-chevron-right"></i> Get start with your survey</h3>
+            <form class="form" method="post">
+
+              <div class="form-group">
+                <label class="label_Styling" for="NameTextField">Survey Topic</label>
+                <input type="text" class="form-control" id="NameTextField"
+                placeholder="Survey Topic" name="topic" value="" required>
+              </div>
+
+            
+            <div class="form-group"> 
+                <label class="label_Styling" for="NameTextField">Choose Your Survey Template</label>         
+                <select class="form-control" name="type">
+                    <option value="1">Multiple Choice</option>
+                    <option value="2">Agree/Disagree</option>
+                    <option value="3">Short Answer</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="label_Styling" for="NameTextField">Number of questions</label>
+                <input type="text" class="form-control" id="NameTextField"
+                placeholder="Number of questions" name="numberOfQuestion" value="" required>
+            </div>
+
+            
+
+    
+<!--<a href="/surveys/create" class="btn btn-primary">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></a>-->
+              <button type="submit" class="btn btn-primary">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+              <a href="/" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
+            </form>
+        </div>
+      </div>
+    </div>
+
+<% include ../partials/footer.ejs %>

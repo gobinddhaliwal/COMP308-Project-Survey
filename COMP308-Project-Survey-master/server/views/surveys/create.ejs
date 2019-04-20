@@ -1,0 +1,75 @@
+<% include ../partials/header.ejs %>
+<!--File  name: Survey create,  Author's  name: Group 3,  web  site  name: Its Survey,  file  description: this file is to create page-->
+    <!-- MAIN CONTENT -->
+    <div class="body_container">
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <h3 class="list_title"><i class="fa fa-plus" aria-hidden="true"></i> <%= title %></h3>
+            <form class="form" method="post"  onsubmit="timeChange()">
+            <!--hidden input to capture numberOfQuestion and question type and timezone offset-->
+            <input type="hidden" class="form-control" id="NameTextField"
+                placeholder="Survey Topic" name="numberOfQuestion" value="<%= numberOfQuestion %>" required>
+            <input type="hidden" class="form-control" id="NameTextField"
+                placeholder="Question Type" name="type" value="<%= type %>" required>
+            <input type="hidden" class="form-control" id="timezone"
+                placeholder="Local Time zone offset" name="timeOffset" value="" required>
+
+              <div class="form-group">
+                <label class="label_Styling" for="NameTextField">Survey Topic</label>
+                <input type="text" class="form-control" id="NameTextField"
+                placeholder="Survey Topic" name="topic" value="<%= topic %>" required>
+              </div>
+
+            <div class="form-group">
+                <label class="label_Styling" for="NameTextField">Start Date</label>
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" name="startDate" id="startTime" value="" required/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+
+              <div class="form-group">
+                <label class="label_Styling" for="NameTextField">Expire Date</label>
+                <div class='input-group date' id='datetimepicker2'>
+                    <input type='text' class="form-control" name="expireDate" value="" required/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+     
+          
+            <% for (let count = 1; count <= numberOfQuestion; count++) { %>
+              <div class="form-group">
+                <label class="label_Styling" for="NameTextField">Question Topic <%= count %></label>
+                <input type="text" class="form-control" id="NameTextField"
+                placeholder="Question" name="questionTopic<%=count%>" value="" required>
+              </div>
+              <% if(type == 1 || type == 2) { %>
+               <div class="form-group">
+                <label class="label_Styling" for="CostTextField">Answer 1</label>
+                <input type="text" class="form-control" id="CostTextField"
+                placeholder="Answer One" name="questionAns<%=count%>1" value=""  required>
+              </div>
+              <div class="form-group">
+                <label class="label_Styling" for="CostTextField">Answer 2</label>
+                <input type="text" class="form-control" id="CostTextField"
+                placeholder="Answer Two" name="questionAns<%=count%>2" value=""  required>
+              </div>
+              <div class="form-group">
+                <label class="label_Styling" for="CostTextField">Answer 3</label>
+                <input type="text" class="form-control" id="CostTextField"
+                placeholder="Answer Three (Optional)" name="questionAns<%=count%>3" value="">
+              </div>
+              <% } %>
+               <% } %>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Submit</button>
+              <a href="/" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
+            </form>
+        </div>
+      </div>
+    </div>
+
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,50 @@
+
+<% include ../partials/header.ejs %>
+<!--File  name: Login,  Author's  name: Group 3,  web  site  name: Its Survey,  file  description: this file is to Login page-->
+<main class="body_container">
+<div class="login">
+<% if (messages.length > 0) { %>
+        <div class="alert alert-danger"><%= messages %></div>
+      <% } %>
+   <div class="row">
+        <div class="col-md-4 col-md-offset-7">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-lock"></span> Login</div>
+                <div class="panel-body">
+                    <form method="post" class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">
+                            Username:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="username" placeholder="Username" required autofocus/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">
+                            Password:</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" name="password"  placeholder="Password" required/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    </div>
+                    <div class="form-group last">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <input type="submit" class="btn btn-success btn-sm" value="Log In"/>
+                            <a href="/">
+                                 <input type="button" class="btn btn-default btn-sm" value="Cancel"/>
+                            </a>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+                <div class="panel-footer">
+                    Not Registred? <a href="/users/register">Register here</a></div>
+            </div>
+        </div>
+    </div>
+      </div>
+    </main>
+
+<% include ../partials/footer.ejs %>
