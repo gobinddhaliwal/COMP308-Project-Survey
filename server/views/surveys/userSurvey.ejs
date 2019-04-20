@@ -1,0 +1,46 @@
+<% include ../partials/header.ejs %>
+<!--File  name: UserSurvey,  Author's  name: Group 3,  web  site  name: Its Survey,  file  description: this file is to UserSurvey page-->
+    <!-- MAIN CONTENT -->
+    <div class="body_container">
+    <div class="container">
+      <% if (messages.length > 0) { %>
+        <div class="alert alert-danger" style= "margin-left:0px;"><%= messages %></div>
+      <% } %>
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <h3 class="list_title"><i class="glyphicon glyphicon-th-list"></i> My Surveys List </h3>
+          <br>
+          <table class="table table-bordered table-striped table-hover">
+            <tr>
+              <th class="text-center">Survey Topic</th>
+              <th class="text-center"></th>
+              <th class="text-center"></th>
+              <th class="text-center"></th>
+            </tr>
+            <!-- Template Row -->
+            <% for (let count = 0; count < surveys.length; count++) { %>
+            <tr>
+              <td class="text-center"><%= surveys[count].topic %></td>
+              <td class="text-center">
+              <a href="/surveys/view/<%= surveys[count]._id %>" class="btn btn-primary">
+              <i class="fa fa-eye"></i> View</a>
+              </td>
+               <td class="text-center">
+              <a href="/surveys/delete/<%= surveys[count]._id %>" class="btn btn-danger">
+              <i class="fa fa-trash-o"></i> Delete</a>
+              </td>
+               <td class="text-center">
+              <a href="/surveys/statistics/<%= surveys[count]._id %>" class="btn btn-danger">
+              <i class="fa fa-bar-chart" aria-hidden="true"></i> View Statistics</a>
+              </td>
+            </tr>
+            <% } %>
+          </table>
+        </div>
+      </div>
+    </div>
+    </div>
+
+<% include ../partials/footer.ejs %>
+
+

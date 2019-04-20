@@ -1,97 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= title %></title>
-    <!-- CSS Section-->
-    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/@fortawesome/fontawesome-free/css/all.min.css" />
-    <link rel="stylesheet" href="/Content/app.css" />
+    <!-- CSS SECTION -->
+    <link rel="stylesheet" href="/Scripts/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Scripts/lib/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/Scripts/lib/font-awesome/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/Content/app.css' />
+    <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">COMP308</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
+
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
+      <a class="navbar-brand" style="padding-top:8px;" href="/">xResearch</a>
+    </div>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <% if(title == "Home") { %>
-          <li class="nav-item active"><% } else { %></li>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-center">
+        <% if(title == "Home") { %>
+          <li class="active"><a href="/"><i class="fa fa-home fa-lg"></i> Home</a></li>
+        <% } else { %>
+          <li><a href="/"><i class="fa fa-home fa-lg"></i> Home</a></li>
+        <% } %>
 
-          <li class="nav-item">
-            <% } %>
-
-            <a class="nav-link" href="/"
-              ><i class="fas fa-lg fa-igloo"></i> Home
-              <span class="sr-only">(current)</span></a
-            >
-          </li>
-
-          <% if(title == "About") { %>
-          <li class="nav-item active"><% } else { %></li>
-
-          <li class="nav-item">
-            <% } %>
-
-            <a class="nav-link" href="/about"
-              ><i class="fa fa-lg fa-info"></i> About</a
-            >
-          </li>
-
-          <% if(title == "Products") { %>
-          <li class="nav-item active"><% } else { %></li>
-
-          <li class="nav-item">
-            <% } %>
-
-            <a class="nav-link" href="/products"
-              ><i class="fa fa-lg fa-briefcase"></i> Products</a
-            >
-          </li>
-
-          <% if(title == "Services") { %>
-          <li class="nav-item active"><% } else { %></li>
-
-          <li class="nav-item">
-            <% } %>
-
-            <a class="nav-link" href="/services"
-              ><i class="fa fa-lg fa-birthday-cake"></i> Services</a
-            >
-          </li>
-
-          <% if(title == "Contact") { %>
-          <li class="nav-item active"><% } else { %></li>
-
-          <li class="nav-item">
-            <% } %>
-
-            <a class="nav-link" href="/contact"
-              ><i class="fa fa-lg fa-phone"></i> Contact</a
-            >
-          </li>
-
-          <% if(typeof displayName == 'string' && displayName) { %>
-            <li class="navbar-text"><i class="fas fa-lg fa-user"></i> 
-              Welcome, <%= displayName %></li>
-            <li class="nav-item"><a href="/logout" class="nav-link">
-              <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+        <% if(typeof displayName == 'string' && displayName) { %>
+          <% if(title == "My Surveys List") { %>
+          <li class="active"><a href="/surveys/mySurveys"><i class="fa fa-quora" aria-hidden="true"></i>
+          </i> My Survey List</a></li>
           <% } else { %>
-            <li class="nav-item"><a href="/login" class="nav-link">
-              <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="/surveys/mySurveys"><i class="fa fa-quora" aria-hidden="true"></i>
+            </i> My Survey List</a></li>
           <% } %>
-        </ul>
-      </div>
-    </nav>
+        <% } %>
+
+        <% if(typeof displayName == 'string' && displayName) { %>
+          <% if(title == "Create Survey") { %>
+            <li class="active"><a href="/surveys/initial"><i class="fa fa-plus" aria-hidden="true"></i> Create</a></li>
+            <% } else { %>
+              <li><a href="/surveys/initial"><i class="fa fa-plus" aria-hidden="true"></i> Create</a></li>
+            <% } %>
+        <% } %>         
+
+        <% if(title == "Surveys List") { %>
+          <li class="active"><a href="/surveys"><i class="fa fa-commenting" aria-hidden="true"></i> Respond</a></li>
+        <% } else { %>
+          <li><a href="/surveys"><i class="fa fa-commenting" aria-hidden="true"></i> Respond</a></li>
+        <% } %>
+
+        <% if(typeof displayName == 'string' && displayName) { %>
+          <% if(title == "User Profile") { %>
+            <li class="active"><a href="../users/profile"><i class="fa fa-pencil" aria-hidden="true"></i> Update Profile</a></li>
+            <% } else { %>
+              <li><a href="../users/profile"><i class="fa fa-pencil" aria-hidden="true"></i> Update Profile</a></li>
+            <% } %>
+        <% } %>    
+
+        <% if(typeof displayName == 'string' && displayName) { %>
+          <li class="navbar-text"><i class="fa fa-user"></i> Welcome, <%= displayName %></li>
+          <li><a href="/users/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+        <% } else { %>
+          <li><a href="/users/login"><i class="fa fa-sign-in"></i> Login</a></li>
+        <% } %>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav>
